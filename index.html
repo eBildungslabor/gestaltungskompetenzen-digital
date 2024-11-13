@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/pico.min.css">
+    <title>Reflexion zu Gestaltungskompetenz</title>
+    <script>
+        // Liste aller Szenarien und zugehörige richtige Gestaltungskompetenzen
+const szenarien = [
+    // 1. Weltoffen und neue Perspektiven integrierend Wissen aufbauen
+    { text: "Im Englischunterricht der 8. Klasse bittet die Lehrkraft die Schüler, über unterschiedliche kulturelle Traditionen weltweit zu recherchieren und ihre Ergebnisse zu präsentieren. Sie ermutigt die Schüler, auch eigene Erfahrungen und verschiedene Quellen einzubringen.", kompetenz: 1 },
+    { text: "Im Geschichtsunterricht lehnt eine Lehrkraft ab, dass die Schüler historische Ereignisse aus verschiedenen internationalen Perspektiven betrachten. Stattdessen fokussiert er nur auf nationale Sichtweisen.", kompetenz: 1 },
+    { text: "Eine Schülerin bringt im Politikunterricht unterschiedliche Ansichten über die Globalisierung in die Diskussion ein und hilft ihren Mitschülern, verschiedene Sichtweisen zu verstehen.", kompetenz: 1 },
+    { text: "Ein Schüler ignoriert im Geographieunterricht alternative Meinungen zur Klimapolitik, obwohl die Lehrkraft ihn dazu anregt, unterschiedliche Perspektiven zu berücksichtigen.", kompetenz: 1 },
+
+    // 2. Vorausschauend Entwicklungen analysieren und beurteilen können
+    { text: "Im Biologieunterricht der 10. Klasse regt die Lehrkraft eine Diskussion über die möglichen Auswirkungen des Klimawandels auf die Landwirtschaft in den nächsten 50 Jahren an. Die Schüler müssen dabei verschiedene Szenarien analysieren.", kompetenz: 2 },
+    { text: "Eine Lehrkraft im Sozialkundeunterricht unterlässt es, mit den Schülern über zukünftige gesellschaftliche Veränderungen zu sprechen. Sie behandelt nur aktuelle politische Strukturen, ohne zukünftige Entwicklungen zu analysieren.", kompetenz: 2 },
+    { text: "Ein Schüler bringt im Physikunterricht Ideen ein, wie sich zukünftige technische Entwicklungen auf erneuerbare Energien auswirken könnten. Er analysiert diese Trends gemeinsam mit der Klasse.", kompetenz: 2 },
+    { text: "Eine Schülerin im Informatikunterricht fokussiert sich nur auf die aktuellen Programmiersprachen, ohne sich Gedanken über zukünftige Trends und Entwicklungen in der Technologiebranche zu machen.", kompetenz: 2 },
+
+    // 3. Interdisziplinär Erkenntnisse gewinnen und handeln
+    { text: "Im Kunstunterricht arbeiten Schüler und Lehrer gemeinsam mit der Mathematikabteilung an einem Projekt, bei dem geometrische Muster künstlerisch dargestellt werden. Die Lehrkräfte unterstützen die Zusammenarbeit.", kompetenz: 3 },
+    { text: "Im Sportunterricht ignoriert die Lehrkraft die Möglichkeit, Erkenntnisse aus der Biologie in das Training der Schüler zu integrieren, obwohl eine Zusammenarbeit mit dem Biologielehrer angeboten wurde.", kompetenz: 3 },
+    { text: "Eine Schülerin kombiniert im Chemieunterricht Wissen aus Biologie und Physik, um ein Projekt zur Umweltverschmutzung erfolgreich abzuschließen.", kompetenz: 3 },
+    { text: "Ein Schüler im Mathematikunterricht lehnt es ab, Einblicke aus der Kunst zu integrieren, um ein geometrisches Designprojekt zu vervollständigen, obwohl die Lehrkraft diese Zusammenarbeit angeregt hat.", kompetenz: 3 },
+
+    // 4. Risiken, Gefahren und Unsicherheiten erkennen und abwägen können
+    { text: "Im Chemieunterricht der Oberstufe weist die Lehrkraft die Schüler darauf hin, potenzielle Gefahren bei Experimenten zu erkennen und Sicherheitsvorkehrungen zu treffen. Sie erarbeiten gemeinsam Lösungen, um Risiken zu minimieren.", kompetenz: 4 },
+    { text: "Im Sportunterricht ignoriert die Lehrkraft Sicherheitsbedenken bei einem Hochsprungtraining und gibt keine Hinweise auf mögliche Gefahren für die Schüler.", kompetenz: 4 },
+    { text: "Ein Schüler im Technikunterricht erkennt, dass bestimmte Maschinen gefährlich sein könnten, und schlägt vor, Sicherheitsvorkehrungen zu treffen, bevor das Projekt weitergeführt wird.", kompetenz: 4 },
+    { text: "Eine Schülerin im Kunstunterricht nutzt gefährliche Materialien, ohne die Risiken abzuwägen oder nach sichereren Alternativen zu suchen, obwohl die Lehrkraft sie darauf hingewiesen hat.", kompetenz: 4 },
+
+    // 5. Gemeinsam mit anderen planen und handeln können
+    { text: "In der Projektwoche arbeitet eine Lehrkraft eng mit den Schülern zusammen, um gemeinsam ein Theaterstück zu planen und aufzuführen. Jeder bringt seine Stärken ein, und die Gruppe organisiert sich eigenständig.", kompetenz: 5 },
+    { text: "Eine Lehrkraft gibt den Schülern ein Gruppenprojekt, übernimmt jedoch keine Rolle in der Anleitung der Teamarbeit. Die Gruppe scheitert aufgrund mangelnder Kommunikation und Organisation.", kompetenz: 5 },
+    { text: "Ein Schüler im Musikunterricht übernimmt die Koordination eines Gruppenprojekts und stellt sicher, dass alle Mitschüler ihren Teil beitragen. Das Team arbeitet effektiv zusammen.", kompetenz: 5 },
+    { text: "Ein Schüler im Erdkundeunterricht weigert sich, mit seinen Teammitgliedern zu kooperieren, und sabotiert die Gruppenarbeit, indem er keine Aufgaben übernimmt.", kompetenz: 5 },
+
+    // 6. Zielkonflikte bei der Reflexion über Handlungsstrategien berücksichtigen können
+    { text: "Im Ethikunterricht reflektiert die Lehrkraft mit den Schülern über Zielkonflikte, die bei der Umsetzung von Umweltschutzmaßnahmen entstehen könnten. Sie wägen gemeinsam unterschiedliche Interessen ab.", kompetenz: 6 },
+    { text: "Eine Lehrkraft im Politikunterricht diskutiert nicht über mögliche Zielkonflikte zwischen wirtschaftlichem Wachstum und Umweltschutz. Sie behandelt die Themen nur getrennt und ohne Querverbindungen.", kompetenz: 6 },
+    { text: "Ein Schüler im Biologieunterricht erkennt Zielkonflikte zwischen der Nutzung von Gentechnik und den ethischen Bedenken, die damit einhergehen, und schlägt Lösungen vor.", kompetenz: 6 },
+    { text: "Eine Schülerin im Sozialkundeunterricht betrachtet ein Thema nur aus einer Perspektive und ignoriert Zielkonflikte zwischen verschiedenen politischen Gruppen, obwohl die Lehrkraft sie dazu auffordert.", kompetenz: 6 },
+
+    // 7. An kollektiven Entscheidungsprozessen teilhaben können
+    { text: "Eine Lehrkraft im Klassenrat lässt die Schüler demokratisch über die Themen der nächsten Projektarbeit abstimmen und stellt sicher, dass alle Meinungen gehört werden.", kompetenz: 7 },
+    { text: "Im Kunstunterricht trifft die Lehrkraft alle Entscheidungen allein und ignoriert die Vorschläge der Schüler, obwohl diese aktiv in den Entscheidungsprozess einbezogen werden möchten.", kompetenz: 7 },
+    { text: "Ein Schüler im Debattierclub übernimmt die Rolle des Moderators und sorgt dafür, dass alle Mitschüler an der Diskussion teilnehmen und ihre Meinungen einbringen.", kompetenz: 7 },
+    { text: "Ein Schüler im Biologieunterricht trifft alle Entscheidungen in der Gruppenarbeit alleine, ohne die Meinungen seiner Mitschüler zu berücksichtigen, und das Projekt scheitert an mangelnder Zusammenarbeit.", kompetenz: 7 },
+
+    // 8. Sich und andere motivieren können, aktiv zu werden
+    { text: "Eine Lehrkraft im Deutschunterricht ermutigt die Schüler, an einem Schreibwettbewerb teilzunehmen, und bietet zusätzliche Unterstützung an. Sie schafft es, mehrere Schüler zu motivieren, ihre Geschichten einzureichen.", kompetenz: 8 },
+    { text: "Im Mathematikunterricht gibt die Lehrkraft den Schülern eine schwierige Aufgabe, ohne sie zu motivieren oder zu unterstützen. Viele Schüler geben auf, da sie sich überfordert fühlen.", kompetenz: 8 },
+    { text: "Ein Schüler im Sportunterricht übernimmt die Initiative, seine Gruppe zu motivieren, beim Staffellauf ihr Bestes zu geben, und sie gewinnen am Ende den Wettbewerb.", kompetenz: 8 },
+    { text: "Eine Schülerin im Kunstunterricht zeigt kein Interesse daran, ihre Mitschüler zu unterstützen, als diese Hilfe bei einem Gruppenprojekt benötigen. Das Team verliert an Motivation.", kompetenz: 8 },
+
+    // 9. Die eigenen Leitbilder und die anderer reflektieren können
+    { text: "Im Religionsunterricht fordert die Lehrkraft die Schüler auf, ihre eigenen Werte und Überzeugungen zu hinterfragen und diese mit den Überzeugungen anderer zu vergleichen.", kompetenz: 9 },
+    { text: "Im Ethikunterricht gibt die Lehrkraft den Schülern keine Gelegenheit, über ihre eigenen Werte nachzudenken, und vermittelt die Inhalte nur oberflächlich ohne tiefere Reflexion.", kompetenz: 9 },
+    { text: "Ein Schüler im Kunstunterricht reflektiert über seine künstlerische Arbeit und diskutiert mit den Mitschülern, wie ihre unterschiedlichen Hintergründe und Erfahrungen ihre Werke beeinflussen.", kompetenz: 9 },
+    { text: "Eine Schülerin im Musikunterricht besteht darauf, dass ihre Musikstile die besten sind, ohne die anderen Meinungen ihrer Mitschüler zu akzeptieren oder zu reflektieren.", kompetenz: 9 },
+
+    // 10. Vorstellungen von Gerechtigkeit als Entscheidungs- und Handlungsgrundlage nutzen können
+    { text: "Im Gemeinschaftskundeunterricht diskutiert die Lehrkraft mit den Schülern über die gerechte Verteilung von Ressourcen und erarbeitet mit ihnen Lösungen, wie eine faire Gesellschaft aussehen könnte.", kompetenz: 10 },
+    { text: "Eine Lehrkraft im Sozialkundeunterricht ignoriert Diskussionen über Gerechtigkeit und behandelt nur die formalen politischen Strukturen, ohne auf soziale Gerechtigkeit einzugehen.", kompetenz: 10 },
+    { text: "Ein Schüler im Geschichteunterricht reflektiert darüber, wie historische Ereignisse von verschiedenen Gesellschaftsgruppen als ungerecht empfunden wurden, und erarbeitet Vorschläge für zukünftige Generationen.", kompetenz: 10 },
+    { text: "Eine Schülerin im Geographieunterricht erkennt die Ungerechtigkeit bei der Verteilung von Wasserressourcen nicht an und bleibt bei rein theoretischen Ansätzen, obwohl die Lehrkraft sie zu einer tieferen Reflexion anregt.", kompetenz: 10 },
+
+    // 11. Selbständig planen und handeln können
+    { text: "Im Physikunterricht der Oberstufe gibt die Lehrkraft den Schülern die Aufgabe, eigenständig ein Experiment zu planen und durchzuführen. Die Schüler erhalten nur minimale Vorgaben und können kreativ werden.", kompetenz: 11 },
+    { text: "Im Mathematikunterricht gibt die Lehrkraft den Schülern so viele Vorgaben, dass sie keine Gelegenheit haben, eigenständig Lösungen für die gestellten Aufgaben zu entwickeln.", kompetenz: 11 },
+    { text: "Ein Schüler im Informatikunterricht plant ein Programmierprojekt eigenständig und setzt seine Ideen erfolgreich in die Praxis um, ohne ständige Anleitung der Lehrkraft.", kompetenz: 11 },
+    { text: "Eine Schülerin im Chemieunterricht wartet darauf, dass die Lehrkraft ihr jede Anweisung gibt, anstatt eigene Ideen zu entwickeln und das Experiment selbstständig zu planen.", kompetenz: 11 },
+
+    // 12. Empathie für andere zeigen können
+    { text: "Im Sozialkundeunterricht diskutiert die Lehrkraft über soziale Ungleichheiten und ermutigt die Schüler, sich in die Lage benachteiligter Gruppen hineinzuversetzen. Die Schüler entwickeln Lösungen für soziale Probleme.", kompetenz: 12 },
+    { text: "Im Religionsunterricht unterlässt die Lehrkraft es, über die Bedeutung von Empathie zu sprechen. Die Schüler haben keine Gelegenheit, über die Situation anderer Menschen nachzudenken.", kompetenz: 12 },
+    { text: "Ein Schüler im Sportunterricht hilft einem Mitschüler, der Schwierigkeiten mit einer Übung hat, und ermutigt ihn, weiterzumachen. Durch diese Unterstützung kann der Mitschüler die Übung erfolgreich abschließen.", kompetenz: 12 },
+    { text: "Eine Schülerin im Kunstunterricht ignoriert die Gefühle ihrer Mitschüler, als sie kritische Rückmeldungen zu deren Arbeiten gibt, und verletzt sie dadurch, anstatt konstruktive Kritik zu üben.", kompetenz: 12 }
+];
+
+             // Liste der Gestaltungskompetenzen und Beschreibungen
+        const kompetenzen = [
+            { nummer: 1, name: "Weltoffen und neue Perspektiven integrierend Wissen aufbauen", beschreibung: "offen für verschiedene Ansichten und Ideen zu sein, Wissen aus unterschiedlichen Perspektiven zu integrieren, um die eigenen Kenntnisse zu erweitern." },
+            { nummer: 2, name: "Vorausschauend Entwicklungen analysieren und beurteilen können", beschreibung: "zukünftige Entwicklungen und Trends zu erkennen, sie zu bewerten und Entscheidungen auf Basis möglicher Veränderungen zu treffen." },
+            { nummer: 3, name: "Interdisziplinär Erkenntnisse gewinnen und handeln", beschreibung: "Wissen aus verschiedenen Fachbereichen zusammenzuführen, um komplexe Probleme zu lösen und interdisziplinäre Zusammenarbeit zu fördern." },
+            { nummer: 4, name: "Risiken, Gefahren und Unsicherheiten erkennen und abwägen können", beschreibung: "frühzeitig mögliche Risiken und Unsicherheiten zu erkennen, sie zu bewerten und Entscheidungen auf der Grundlage einer Risikoabwägung zu treffen." },
+            { nummer: 5, name: "Gemeinsam mit anderen planen und handeln können", beschreibung: "im Team zu arbeiten, gemeinsam Pläne zu entwickeln und diese koordiniert umzusetzen." },
+            { nummer: 6, name: "Zielkonflikte bei der Reflexion über Handlungsstrategien berücksichtigen können", beschreibung: "verschiedene Interessen und Zielkonflikte bei der Planung von Handlungsstrategien zu erkennen und Lösungen zu finden, die diese berücksichtigen." },
+            { nummer: 7, name: "An kollektiven Entscheidungsprozessen teilhaben können", beschreibung: "sich aktiv an Entscheidungsprozessen zu beteiligen und gemeinsam mit anderen zu Entscheidungen zu kommen." },
+            { nummer: 8, name: "Sich und andere motivieren können, aktiv zu werden", beschreibung: "sowohl sich selbst als auch andere dazu zu motivieren, aktiv an Aufgaben und Projekten teilzunehmen und Verantwortung zu übernehmen." },
+            { nummer: 9, name: "Die eigenen Leitbilder und die anderer reflektieren können", beschreibung: "über die eigenen Werte und Leitbilder nachzudenken, diese zu hinterfragen und auch die Vorstellungen anderer Menschen zu reflektieren." },
+            { nummer: 10, name: "Vorstellungen von Gerechtigkeit als Entscheidungs- und Handlungsgrundlage nutzen können", beschreibung: "gerechte Entscheidungen zu treffen und Handlungen nach Prinzipien der Gerechtigkeit zu gestalten." },
+            { nummer: 11, name: "Selbständig planen und handeln können", beschreibung: "eigenständig Entscheidungen zu treffen, Pläne zu entwickeln und diese umzusetzen, ohne ständige Anleitung von außen." },
+            { nummer: 12, name: "Empathie für andere zeigen können", beschreibung: "sich in die Situation anderer Menschen hineinzuversetzen, ihre Bedürfnisse zu verstehen und mitfühlend zu handeln." }
+        ];
+
+        let aktuellesSzenario = null;
+
+        // Funktion, um ein neues Szenario zu generieren
+        function neuesSzenario() {
+            aktuellesSzenario = szenarien[Math.floor(Math.random() * szenarien.length)];
+            document.getElementById('article').innerText = aktuellesSzenario.text;
+            document.getElementById('antwort').innerHTML = '';  // Antwort zurücksetzen
+            document.getElementById('neues-szenario-btn').style.display = 'none'; // Verstecke den "Nächstes Szenario"-Button
+        }
+
+        // Funktion, um die gewählte Gestaltungskompetenz zu überprüfen
+        function kompetenzUeberpruefen() {
+            const gewahlteKompetenz = parseInt(document.getElementById('kompetenz-auswahl').value); // Parse als Integer
+            const richtigeKompetenz = kompetenzen.find(k => k.nummer === aktuellesSzenario.kompetenz);
+            const gewahlte = kompetenzen.find(k => k.nummer === gewahlteKompetenz);
+
+            let antwortText = '';
+            if (gewahlteKompetenz === aktuellesSzenario.kompetenz) {
+                antwortText = `Ja, das passt gut. Bei der Gestaltungskompetenz '${richtigeKompetenz.name}' geht es darum, ${richtigeKompetenz.beschreibung}`;
+            } else {
+                antwortText = `Das könnte auch passen. Alternativ wäre auch Gestaltungskompetenz '${richtigeKompetenz.name}' denkbar. Hier geht es darum, ${richtigeKompetenz.beschreibung}`;
+            }
+
+            document.getElementById('antwort').innerHTML = antwortText;
+            document.getElementById('neues-szenario-btn').style.display = 'block'; // Zeige den "Nächstes Szenario"-Button
+        }
+    </script>
+</head>
+
+<body onload="neuesSzenario()">
+
+    <main class="container">
+        <h1>Zu welcher Gestaltungskompetenz passt das folgende fiktive pädagogische Szenario und wie könnte es in deinen Bereich übertragen werden?</h1>
+<p>Die Beispiele stehen für positive und negative Ausprägungen. Es gibt immer mehrere Möglichkeiten. Ziel ist die Reflexion der unterschiedlichen Gestaltungskompetenzen.</p>
+        <article id="article">
+            <!-- Hier wird ein zufällig ausgewähltes Szenario angezeigt -->
+        </article>
+
+        <label for="kompetenz-auswahl">Wähle eine Gestaltungskompetenz:</label>
+        <select id="kompetenz-auswahl">
+             <option value="" selected disabled>Bitte wählen</option> <!-- Standardmäßig wird diese Option angezeigt -->
+            <option value="1">Weltoffen und neue Perspektiven integrierend Wissen aufbauen</option>
+            <option value="2">Vorausschauend Entwicklungen analysieren und beurteilen können</option>
+            <option value="3">Interdisziplinär Erkenntnisse gewinnen und handeln</option>
+            <option value="4">Risiken, Gefahren und Unsicherheiten erkennen und abwägen können</option>
+            <option value="5">Gemeinsam mit anderen planen und handeln können</option>
+            <option value="6">Zielkonflikte bei der Reflexion über Handlungsstrategien berücksichtigen können</option>
+            <option value="7">An kollektiven Entscheidungsprozessen teilhaben können</option>
+            <option value="8">Sich und andere motivieren können, aktiv zu werden</option>
+            <option value="9">Die eigenen Leitbilder und die anderer reflektieren können</option>
+            <option value="10">Vorstellungen von Gerechtigkeit als Entscheidungs- und Handlungsgrundlage nutzen können</option>
+            <option value="11">Selbständig planen und handeln können</option>
+            <option value="12">Empathie für andere zeigen können</option>
+        </select>
+
+        <button onclick="kompetenzUeberpruefen()">Überprüfen</button>
+
+        <div id="antwort">
+            <!-- Hier wird die Rückmeldung angezeigt -->
+        </div>
+<p><hr></p>
+        <button id="neues-szenario-btn" onclick="neuesSzenario()" style="display:none;">Nächstes Szenario</button>
+
+    </main>
+
+    <footer class="container">
+        <small>Erstellt für den BNE-Lerntag an der Alice-Salomon Schule in Hannover am 1. Oktober 2024 von <a href="https://ebildungslabor.de">Nele Hirsch (ebildungslabor)</a> • Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a></small>
+    </footer>
+
+</body>
+
+</html>
