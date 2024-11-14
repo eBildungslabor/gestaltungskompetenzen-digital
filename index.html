@@ -10,76 +10,76 @@
         // Liste aller Szenarien und zugehörige richtige Gestaltungskompetenzen
 const szenarien = [
     // 1. Weltoffen und neue Perspektiven integrierend Wissen aufbauen
-    { text: "Im Englischunterricht der 8. Klasse bittet die Lehrkraft die Schüler, über unterschiedliche kulturelle Traditionen weltweit zu recherchieren und ihre Ergebnisse zu präsentieren. Sie ermutigt die Schüler, auch eigene Erfahrungen und verschiedene Quellen einzubringen.", kompetenz: 1 },
-    { text: "Im Geschichtsunterricht lehnt eine Lehrkraft ab, dass die Schüler historische Ereignisse aus verschiedenen internationalen Perspektiven betrachten. Stattdessen fokussiert er nur auf nationale Sichtweisen.", kompetenz: 1 },
-    { text: "Eine Schülerin bringt im Politikunterricht unterschiedliche Ansichten über die Globalisierung in die Diskussion ein und hilft ihren Mitschülern, verschiedene Sichtweisen zu verstehen.", kompetenz: 1 },
-    { text: "Ein Schüler ignoriert im Geographieunterricht alternative Meinungen zur Klimapolitik, obwohl die Lehrkraft ihn dazu anregt, unterschiedliche Perspektiven zu berücksichtigen.", kompetenz: 1 },
+    { text: "Im Distanzunterricht lädt die Lehrkraft internationale Experten zu Videokonferenzen ein, um den Schülern verschiedene kulturelle Perspektiven zu vermitteln. Die Schüler können interaktiv Fragen stellen und diskutieren.", kompetenz: 1 },
+    { text: "Eine Lehrkraft nutzt im digitalen Unterricht nur nationale Quellen und ignoriert internationale Materialien, obwohl diese online leicht verfügbar wären.", kompetenz: 1 },
+    { text: "Eine Schülerin teilt in einem Online-Forum Artikel aus ausländischen Medien und regt Diskussionen über globale Themen an.", kompetenz: 1 },
+    { text: "Ein Schüler lehnt es ab, in einer virtuellen Gruppe mit Schülern aus anderen Ländern zusammenzuarbeiten, obwohl die Plattform dies ermöglicht.", kompetenz: 1 },
 
     // 2. Vorausschauend Entwicklungen analysieren und beurteilen können
-    { text: "Im Biologieunterricht der 10. Klasse regt die Lehrkraft eine Diskussion über die möglichen Auswirkungen des Klimawandels auf die Landwirtschaft in den nächsten 50 Jahren an. Die Schüler müssen dabei verschiedene Szenarien analysieren.", kompetenz: 2 },
-    { text: "Eine Lehrkraft im Sozialkundeunterricht unterlässt es, mit den Schülern über zukünftige gesellschaftliche Veränderungen zu sprechen. Sie behandelt nur aktuelle politische Strukturen, ohne zukünftige Entwicklungen zu analysieren.", kompetenz: 2 },
-    { text: "Ein Schüler bringt im Physikunterricht Ideen ein, wie sich zukünftige technische Entwicklungen auf erneuerbare Energien auswirken könnten. Er analysiert diese Trends gemeinsam mit der Klasse.", kompetenz: 2 },
-    { text: "Eine Schülerin im Informatikunterricht fokussiert sich nur auf die aktuellen Programmiersprachen, ohne sich Gedanken über zukünftige Trends und Entwicklungen in der Technologiebranche zu machen.", kompetenz: 2 },
+    { text: "Die Lehrkraft lässt die Schüler in einem Online-Projekt zukünftige Trends der Digitalisierung in verschiedenen Branchen recherchieren und ihre Ergebnisse in Webinaren präsentieren.", kompetenz: 2 },
+    { text: "Im digitalen Unterricht werden nur historische Entwicklungen besprochen, ohne auf zukünftige technologische Veränderungen einzugehen.", kompetenz: 2 },
+    { text: "Ein Schüler erstellt mithilfe von Simulationstools Prognosen über die Auswirkungen des Klimawandels und teilt seine Analysen mit der Klasse.", kompetenz: 2 },
+    { text: "Eine Schülerin ignoriert in ihrer Online-Präsentation mögliche zukünftige Herausforderungen und konzentriert sich nur auf die Gegenwart.", kompetenz: 2 },
 
     // 3. Interdisziplinär Erkenntnisse gewinnen und handeln
-    { text: "Im Kunstunterricht arbeiten Schüler und Lehrer gemeinsam mit der Mathematikabteilung an einem Projekt, bei dem geometrische Muster künstlerisch dargestellt werden. Die Lehrkräfte unterstützen die Zusammenarbeit.", kompetenz: 3 },
-    { text: "Im Sportunterricht ignoriert die Lehrkraft die Möglichkeit, Erkenntnisse aus der Biologie in das Training der Schüler zu integrieren, obwohl eine Zusammenarbeit mit dem Biologielehrer angeboten wurde.", kompetenz: 3 },
-    { text: "Eine Schülerin kombiniert im Chemieunterricht Wissen aus Biologie und Physik, um ein Projekt zur Umweltverschmutzung erfolgreich abzuschließen.", kompetenz: 3 },
-    { text: "Ein Schüler im Mathematikunterricht lehnt es ab, Einblicke aus der Kunst zu integrieren, um ein geometrisches Designprojekt zu vervollständigen, obwohl die Lehrkraft diese Zusammenarbeit angeregt hat.", kompetenz: 3 },
+    { text: "Über die Lernplattform koordinieren Lehrkräfte verschiedener Fächer ein gemeinsames Projekt, bei dem Schüler eine App entwickeln, die sowohl künstlerische Gestaltung als auch mathematische Algorithmen beinhaltet.", kompetenz: 3 },
+    { text: "Die Lehrkraft beschränkt sich im Online-Unterricht nur auf ihr Fachgebiet und verhindert die Integration von Inhalten aus anderen Disziplinen, obwohl digitale Tools dies erleichtern würden.", kompetenz: 3 },
+    { text: "Eine Schülerin nutzt Kenntnisse aus Informatik und Biologie, um ein digitales Modell eines Ökosystems zu erstellen.", kompetenz: 3 },
+    { text: "Ein Schüler lehnt es ab, in einem interdisziplinären Online-Projekt mitzumachen, und fokussiert sich nur auf sein Lieblingsfach.", kompetenz: 3 },
 
     // 4. Risiken, Gefahren und Unsicherheiten erkennen und abwägen können
-    { text: "Im Chemieunterricht der Oberstufe weist die Lehrkraft die Schüler darauf hin, potenzielle Gefahren bei Experimenten zu erkennen und Sicherheitsvorkehrungen zu treffen. Sie erarbeiten gemeinsam Lösungen, um Risiken zu minimieren.", kompetenz: 4 },
-    { text: "Im Sportunterricht ignoriert die Lehrkraft Sicherheitsbedenken bei einem Hochsprungtraining und gibt keine Hinweise auf mögliche Gefahren für die Schüler.", kompetenz: 4 },
-    { text: "Ein Schüler im Technikunterricht erkennt, dass bestimmte Maschinen gefährlich sein könnten, und schlägt vor, Sicherheitsvorkehrungen zu treffen, bevor das Projekt weitergeführt wird.", kompetenz: 4 },
-    { text: "Eine Schülerin im Kunstunterricht nutzt gefährliche Materialien, ohne die Risiken abzuwägen oder nach sichereren Alternativen zu suchen, obwohl die Lehrkraft sie darauf hingewiesen hat.", kompetenz: 4 },
+    { text: "Im digitalen Unterricht diskutiert die Lehrkraft mit den Schülern über Datenschutzrisiken bei der Nutzung von Social Media und erarbeitet gemeinsam sichere Verhaltensweisen.", kompetenz: 4 },
+    { text: "Die Lehrkraft gibt den Schülern Online-Aufgaben, ohne auf mögliche Risiken wie Cybermobbing oder Datenmissbrauch hinzuweisen.", kompetenz: 4 },
+    { text: "Ein Schüler erkennt die Gefahr von Fake News im Internet und teilt Methoden zur Quellenüberprüfung mit seinen Mitschülern.", kompetenz: 4 },
+    { text: "Eine Schülerin installiert ungeprüfte Software für ein Online-Projekt und bringt dadurch Sicherheitsrisiken für das Schulsystem mit sich.", kompetenz: 4 },
 
     // 5. Gemeinsam mit anderen planen und handeln können
-    { text: "In der Projektwoche arbeitet eine Lehrkraft eng mit den Schülern zusammen, um gemeinsam ein Theaterstück zu planen und aufzuführen. Jeder bringt seine Stärken ein, und die Gruppe organisiert sich eigenständig.", kompetenz: 5 },
-    { text: "Eine Lehrkraft gibt den Schülern ein Gruppenprojekt, übernimmt jedoch keine Rolle in der Anleitung der Teamarbeit. Die Gruppe scheitert aufgrund mangelnder Kommunikation und Organisation.", kompetenz: 5 },
-    { text: "Ein Schüler im Musikunterricht übernimmt die Koordination eines Gruppenprojekts und stellt sicher, dass alle Mitschüler ihren Teil beitragen. Das Team arbeitet effektiv zusammen.", kompetenz: 5 },
-    { text: "Ein Schüler im Erdkundeunterricht weigert sich, mit seinen Teammitgliedern zu kooperieren, und sabotiert die Gruppenarbeit, indem er keine Aufgaben übernimmt.", kompetenz: 5 },
+    { text: "In einem digitalen Klassenprojekt nutzen die Schüler Kollaborationstools, um gemeinsam eine Online-Zeitschrift zu erstellen. Die Lehrkraft moderiert und unterstützt den Prozess.", kompetenz: 5 },
+    { text: "Die Lehrkraft stellt ein Gruppenprojekt online, bietet aber keine Plattform oder Anleitung für die Zusammenarbeit, sodass die Schüler isoliert arbeiten.", kompetenz: 5 },
+    { text: "Ein Schüler organisiert über die Lernplattform eine virtuelle Lerngruppe und teilt Ressourcen mit seinen Mitschülern.", kompetenz: 5 },
+    { text: "Eine Schülerin ignoriert die Beiträge ihrer Teammitglieder in einem Online-Forum und arbeitet alleine weiter.", kompetenz: 5 },
 
     // 6. Zielkonflikte bei der Reflexion über Handlungsstrategien berücksichtigen können
-    { text: "Im Ethikunterricht reflektiert die Lehrkraft mit den Schülern über Zielkonflikte, die bei der Umsetzung von Umweltschutzmaßnahmen entstehen könnten. Sie wägen gemeinsam unterschiedliche Interessen ab.", kompetenz: 6 },
-    { text: "Eine Lehrkraft im Politikunterricht diskutiert nicht über mögliche Zielkonflikte zwischen wirtschaftlichem Wachstum und Umweltschutz. Sie behandelt die Themen nur getrennt und ohne Querverbindungen.", kompetenz: 6 },
-    { text: "Ein Schüler im Biologieunterricht erkennt Zielkonflikte zwischen der Nutzung von Gentechnik und den ethischen Bedenken, die damit einhergehen, und schlägt Lösungen vor.", kompetenz: 6 },
-    { text: "Eine Schülerin im Sozialkundeunterricht betrachtet ein Thema nur aus einer Perspektive und ignoriert Zielkonflikte zwischen verschiedenen politischen Gruppen, obwohl die Lehrkraft sie dazu auffordert.", kompetenz: 6 },
+    { text: "Im virtuellen Ethikunterricht analysieren die Schüler mithilfe von Online-Debatten die Zielkonflikte zwischen Datenschutz und Sicherheitsüberwachung.", kompetenz: 6 },
+    { text: "Die Lehrkraft behandelt im digitalen Unterricht Umweltschutz und Wirtschaftswachstum als getrennte Themen, ohne auf deren Wechselwirkungen einzugehen.", kompetenz: 6 },
+    { text: "Ein Schüler erstellt ein Video über die Vor- und Nachteile von Künstlicher Intelligenz und diskutiert mögliche ethische Dilemmata.", kompetenz: 6 },
+    { text: "Eine Schülerin betrachtet in ihrer Online-Präsentation nur die positiven Seiten von sozialen Medien und ignoriert deren potenzielle Nachteile.", kompetenz: 6 },
 
     // 7. An kollektiven Entscheidungsprozessen teilhaben können
-    { text: "Eine Lehrkraft im Klassenrat lässt die Schüler demokratisch über die Themen der nächsten Projektarbeit abstimmen und stellt sicher, dass alle Meinungen gehört werden.", kompetenz: 7 },
-    { text: "Im Kunstunterricht trifft die Lehrkraft alle Entscheidungen allein und ignoriert die Vorschläge der Schüler, obwohl diese aktiv in den Entscheidungsprozess einbezogen werden möchten.", kompetenz: 7 },
-    { text: "Ein Schüler im Debattierclub übernimmt die Rolle des Moderators und sorgt dafür, dass alle Mitschüler an der Diskussion teilnehmen und ihre Meinungen einbringen.", kompetenz: 7 },
-    { text: "Ein Schüler im Biologieunterricht trifft alle Entscheidungen in der Gruppenarbeit alleine, ohne die Meinungen seiner Mitschüler zu berücksichtigen, und das Projekt scheitert an mangelnder Zusammenarbeit.", kompetenz: 7 },
+    { text: "Die Lehrkraft richtet ein Online-Forum ein, in dem die Schüler gemeinsam über die Regeln für den digitalen Klassenraum abstimmen können.", kompetenz: 7 },
+    { text: "Entscheidungen über digitale Klassenaktivitäten trifft die Lehrkraft allein, ohne die Schüler einzubeziehen.", kompetenz: 7 },
+    { text: "Ein Schüler moderiert eine virtuelle Gruppenbesprechung, um gemeinsam Entscheidungen für ein Projekt zu treffen.", kompetenz: 7 },
+    { text: "Eine Schülerin ignoriert in einer Online-Gruppe die Meinungen der anderen und setzt ihre eigenen Ideen durch, ohne Rücksprache zu halten.", kompetenz: 7 },
 
     // 8. Sich und andere motivieren können, aktiv zu werden
-    { text: "Eine Lehrkraft im Deutschunterricht ermutigt die Schüler, an einem Schreibwettbewerb teilzunehmen, und bietet zusätzliche Unterstützung an. Sie schafft es, mehrere Schüler zu motivieren, ihre Geschichten einzureichen.", kompetenz: 8 },
-    { text: "Im Mathematikunterricht gibt die Lehrkraft den Schülern eine schwierige Aufgabe, ohne sie zu motivieren oder zu unterstützen. Viele Schüler geben auf, da sie sich überfordert fühlen.", kompetenz: 8 },
-    { text: "Ein Schüler im Sportunterricht übernimmt die Initiative, seine Gruppe zu motivieren, beim Staffellauf ihr Bestes zu geben, und sie gewinnen am Ende den Wettbewerb.", kompetenz: 8 },
-    { text: "Eine Schülerin im Kunstunterricht zeigt kein Interesse daran, ihre Mitschüler zu unterstützen, als diese Hilfe bei einem Gruppenprojekt benötigen. Das Team verliert an Motivation.", kompetenz: 8 },
+    { text: "Die Lehrkraft nutzt Gamification-Elemente in der Lernplattform, um die Schüler zu motivieren, regelmäßig an den Online-Kursen teilzunehmen.", kompetenz: 8 },
+    { text: "Im digitalen Unterricht fehlt es an Interaktion, und die Lehrkraft gibt den Schülern keine Anreize, sich zu beteiligen.", kompetenz: 8 },
+    { text: "Ein Schüler initiiert einen virtuellen Wettkampf, um seine Mitschüler zu motivieren, ihre Programmierkenntnisse zu verbessern.", kompetenz: 8 },
+    { text: "Eine Schülerin meldet sich selten im Online-Unterricht und ermutigt auch ihre Freunde nicht zur Teilnahme.", kompetenz: 8 },
 
     // 9. Die eigenen Leitbilder und die anderer reflektieren können
-    { text: "Im Religionsunterricht fordert die Lehrkraft die Schüler auf, ihre eigenen Werte und Überzeugungen zu hinterfragen und diese mit den Überzeugungen anderer zu vergleichen.", kompetenz: 9 },
-    { text: "Im Ethikunterricht gibt die Lehrkraft den Schülern keine Gelegenheit, über ihre eigenen Werte nachzudenken, und vermittelt die Inhalte nur oberflächlich ohne tiefere Reflexion.", kompetenz: 9 },
-    { text: "Ein Schüler im Kunstunterricht reflektiert über seine künstlerische Arbeit und diskutiert mit den Mitschülern, wie ihre unterschiedlichen Hintergründe und Erfahrungen ihre Werke beeinflussen.", kompetenz: 9 },
-    { text: "Eine Schülerin im Musikunterricht besteht darauf, dass ihre Musikstile die besten sind, ohne die anderen Meinungen ihrer Mitschüler zu akzeptieren oder zu reflektieren.", kompetenz: 9 },
+    { text: "Im virtuellen Philosophieunterricht erstellen die Schüler Blogs, in denen sie ihre Werte und Überzeugungen reflektieren und Kommentare von Mitschülern erhalten.", kompetenz: 9 },
+    { text: "Die Lehrkraft bietet keine Möglichkeiten zur Reflexion an und konzentriert sich im digitalen Unterricht nur auf Faktenwissen.", kompetenz: 9 },
+    { text: "Ein Schüler erstellt ein Video, in dem er seine Haltung zu Umweltfragen darlegt und lädt andere ein, ihre Sichtweisen zu teilen.", kompetenz: 9 },
+    { text: "Eine Schülerin lehnt es ab, im Online-Forum auf die Meinungen anderer einzugehen, und beharrt stur auf ihren Standpunkten.", kompetenz: 9 },
 
     // 10. Vorstellungen von Gerechtigkeit als Entscheidungs- und Handlungsgrundlage nutzen können
-    { text: "Im Gemeinschaftskundeunterricht diskutiert die Lehrkraft mit den Schülern über die gerechte Verteilung von Ressourcen und erarbeitet mit ihnen Lösungen, wie eine faire Gesellschaft aussehen könnte.", kompetenz: 10 },
-    { text: "Eine Lehrkraft im Sozialkundeunterricht ignoriert Diskussionen über Gerechtigkeit und behandelt nur die formalen politischen Strukturen, ohne auf soziale Gerechtigkeit einzugehen.", kompetenz: 10 },
-    { text: "Ein Schüler im Geschichteunterricht reflektiert darüber, wie historische Ereignisse von verschiedenen Gesellschaftsgruppen als ungerecht empfunden wurden, und erarbeitet Vorschläge für zukünftige Generationen.", kompetenz: 10 },
-    { text: "Eine Schülerin im Geographieunterricht erkennt die Ungerechtigkeit bei der Verteilung von Wasserressourcen nicht an und bleibt bei rein theoretischen Ansätzen, obwohl die Lehrkraft sie zu einer tieferen Reflexion anregt.", kompetenz: 10 },
+    { text: "Die Lehrkraft initiiert eine Online-Diskussion über die digitale Kluft und wie fehlender Internetzugang soziale Ungerechtigkeiten verstärkt.", kompetenz: 10 },
+    { text: "Im digitalen Unterricht werden Ungerechtigkeiten im Bildungssystem nicht thematisiert, obwohl die digitale Umgebung dafür geeignet wäre.", kompetenz: 10 },
+    { text: "Ein Schüler setzt sich in sozialen Medien für fairen Handel ein und informiert seine Mitschüler darüber.", kompetenz: 10 },
+    { text: "Eine Schülerin ignoriert in ihrer Präsentation ethische Aspekte von Technologien und fokussiert nur auf ökonomische Vorteile.", kompetenz: 10 },
 
     // 11. Selbständig planen und handeln können
-    { text: "Im Physikunterricht der Oberstufe gibt die Lehrkraft den Schülern die Aufgabe, eigenständig ein Experiment zu planen und durchzuführen. Die Schüler erhalten nur minimale Vorgaben und können kreativ werden.", kompetenz: 11 },
-    { text: "Im Mathematikunterricht gibt die Lehrkraft den Schülern so viele Vorgaben, dass sie keine Gelegenheit haben, eigenständig Lösungen für die gestellten Aufgaben zu entwickeln.", kompetenz: 11 },
-    { text: "Ein Schüler im Informatikunterricht plant ein Programmierprojekt eigenständig und setzt seine Ideen erfolgreich in die Praxis um, ohne ständige Anleitung der Lehrkraft.", kompetenz: 11 },
-    { text: "Eine Schülerin im Chemieunterricht wartet darauf, dass die Lehrkraft ihr jede Anweisung gibt, anstatt eigene Ideen zu entwickeln und das Experiment selbstständig zu planen.", kompetenz: 11 },
+    { text: "Die Lehrkraft gibt den Schülern die Aufgabe, eigenständig ein digitales Portfolio zu erstellen, in dem sie ihre Lernfortschritte dokumentieren.", kompetenz: 11 },
+    { text: "Im Online-Unterricht gibt die Lehrkraft so detaillierte Anweisungen, dass die Schüler keine eigenen Entscheidungen treffen müssen.", kompetenz: 11 },
+    { text: "Ein Schüler plant und führt ein eigenes Online-Experiment durch und teilt die Ergebnisse mit der Klasse.", kompetenz: 11 },
+    { text: "Eine Schülerin wartet ständig auf Anweisungen der Lehrkraft und zeigt keine Initiative im selbstständigen Lernen.", kompetenz: 11 },
 
     // 12. Empathie für andere zeigen können
-    { text: "Im Sozialkundeunterricht diskutiert die Lehrkraft über soziale Ungleichheiten und ermutigt die Schüler, sich in die Lage benachteiligter Gruppen hineinzuversetzen. Die Schüler entwickeln Lösungen für soziale Probleme.", kompetenz: 12 },
-    { text: "Im Religionsunterricht unterlässt die Lehrkraft es, über die Bedeutung von Empathie zu sprechen. Die Schüler haben keine Gelegenheit, über die Situation anderer Menschen nachzudenken.", kompetenz: 12 },
-    { text: "Ein Schüler im Sportunterricht hilft einem Mitschüler, der Schwierigkeiten mit einer Übung hat, und ermutigt ihn, weiterzumachen. Durch diese Unterstützung kann der Mitschüler die Übung erfolgreich abschließen.", kompetenz: 12 },
-    { text: "Eine Schülerin im Kunstunterricht ignoriert die Gefühle ihrer Mitschüler, als sie kritische Rückmeldungen zu deren Arbeiten gibt, und verletzt sie dadurch, anstatt konstruktive Kritik zu üben.", kompetenz: 12 }
+    { text: "Die Lehrkraft organisiert im digitalen Unterricht virtuelle Austausche mit Schülern aus anderen Ländern, um Empathie und Verständnis für unterschiedliche Lebenssituationen zu fördern.", kompetenz: 12 },
+    { text: "Im Online-Unterricht werden persönliche Geschichten oder Erfahrungen nicht geteilt, wodurch wenig Raum für Empathie entsteht.", kompetenz: 12 },
+    { text: "Ein Schüler bemerkt, dass ein Mitschüler im Videounterricht zurückgezogen wirkt, und bietet ihm Unterstützung über eine private Nachricht an.", kompetenz: 12 },
+    { text: "Eine Schülerin macht in einer Online-Diskussion abfällige Kommentare über die Beiträge anderer, ohne deren Gefühle zu berücksichtigen.", kompetenz: 12 }
 ];
 
              // Liste der Gestaltungskompetenzen und Beschreibungen
@@ -164,9 +164,10 @@ const szenarien = [
     </main>
 
     <footer class="container">
-        <small>Erstellt für den BNE-Lerntag an der Alice-Salomon Schule in Hannover am 1. Oktober 2024 von <a href="https://ebildungslabor.de">Nele Hirsch (ebildungslabor)</a> • Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a></small>
+        <small>Erstellt für die bundesweite Fortbildungstagung der Bereichslehrkräfte und Circuslehrkräfte vom 18. bis 20. November 2024 in Potsdam von <a href="https://ebildungslabor.de">Nele Hirsch (ebildungslabor)</a> • Lizenz: <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de">CC0 1.0</a></small>
     </footer>
 
 </body>
 
 </html>
+
